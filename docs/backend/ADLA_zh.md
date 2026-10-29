@@ -52,6 +52,7 @@ flowchart LR
 ## 2. 使用方法
 
 ### 2.1 快速开始
+[下载预编译文件](https://github.com/Amlogic-NN/amlnn-llama.cpp/releases/tag/v0.7.0-aml) 
 
 ```sh
 cd aarch64
