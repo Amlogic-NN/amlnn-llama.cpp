@@ -7,7 +7,7 @@ deployment simple.**
 
 ```mermaid
 flowchart LR
-    A["GGUF model<br/>Q4_0 / Q8_0"] --> B["llama.cpp<br/>ADLA Backend"]
+    A["GGUF model"] --> B["llama.cpp<br/>ADLA Backend"]
     B --> C["Amlogic NPU<br/>on-device acceleration"]
     B --> D["Automatic compile and cache<br/>compile once, reuse many times"]
     classDef model fill:#eff6ff,stroke:#8bb9ec,color:#143a63,stroke-width:1px
@@ -32,14 +32,20 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A["Application<br/>llama-cli / llama-server / llama-embedding"] --> B["llama.cpp / GGML"]
-    M["GGUF model<br/>Q4_0 / Q8_0"] --> B
+    A["llama-cli</br> llama-server</br>llama-embedding"] --> B["llama.cpp / GGML"]
+    M["GGUF model"] --> B
     B --> C["ADLA Backend"]
-    C --> D["First run: compile the model graph"]
+    C --> D["first run:</br>compile the model graph"]
     D --> E["ADLA model cache<br/>.adla files"]
     E --> F["ADLA Runtime"]
     C --> F
     F --> G["Amlogic NPU"]
+    classDef model fill:#eff6ff,stroke:#8bb9ec,color:#143a63,stroke-width:1px
+    classDef core fill:#1769b2,stroke:#1769b2,color:#ffffff,stroke-width:1px
+    classDef output fill:#f4f9ff,stroke:#8bb9ec,color:#143a63,stroke-width:1px
+    class A,M,B model
+    class C,F,G core
+    class D,E output
 ```
 
 ### Environment Requirement
