@@ -1,3 +1,4 @@
+**EN** | [CN](docs/backend/ADLA_zh.md)
 # llama.cpp for the ADLA NPU
 
 This is llama.cpp on the Amlogic ADLA NPU. 
